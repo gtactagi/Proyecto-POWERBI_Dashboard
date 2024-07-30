@@ -1,0 +1,38 @@
+Objetivo: Crear un DashBoard para un archivo Excel que se importa a nivel local para mostrar algunos conceptos básicos de power BI. Este consiste en mostrar reporte financiero resumido para las provincias del dataset.
+
+Este es un archivo creado por power BI,a partir de unos datos del archivo SuperOficinaCanada+-+A2+Capacitación.xlsl
+
+Al abrir Power BI se abre importa este archivo y se seleccionan las tablas Provincias y VentasSuperOficina
+
+Se chequean que ambas tablas seleccionadas esten comunicadas, esto el sistema lo hace automáticamente y las conecta mediante campo "Provincia"
+
+Desde vista tabla podemos, aplicar filtros, limpiar datos vacíos , transformar datos entre otras opciones que nos arrojarían un dataset mas limpio.
+
+Se selecciona vista de informe, se realiza una "segmentación de datos" en la pestaña visualizaciones.
+Se arrastra campo provincias desde pestaña "Datos" y se genera un filtro para seleccionar provincias, se le da estilo de menú desplegable y selección única desde la opción Desde "dar formato a objeto visual" previamente haciendo click en el objeto.
+
+Para el titulo se genera una tarjeta de varias filas  posterioemnte desde la pestaña "Datos" se selecciona la tabla VentasSuperOficina y se genera una nueva medida con el botón nueva medida.
+En el DAX se reemplaza valor medida por titulo= " Reporte financeciero para la provincia de: "&UPPER(SELECTEDVALUE(provincias1[Provincia)) y de este modo tengo un nuevo campo y agrego este campo(titulo) a tarjeta de varias filas y le doy estilo a gusto.
+
+Luego inserto tarjetas simples para arrastrar campos ventas totales, ganancias, cantidad de productos.
+(Para esto agrego valor moneda con dos decimales para ventas y ganancias desde la sección Vista de tabla). Agrego ordenes totales con countrows.
+
+Genero un grafico, y le doy títulos
+
+genero margen de ganancia en nueva medida haciendo una suma de ganancias en la tabla VentasSuperOficina dividido por ventas totale sen la misma tabla. Su resultado lo paso a porcentaje.
+
+Podria darle estilos graficos al Dashboard generado, creando un archivo en power point y guardándolo como svg y luego importar el diseño desde el botón "Dar formato a la pagina de informe" y seleccionar mi  rchivo.Quitar su transparencia para visualizarlo
+
+Tambiar podría cargar las imágenes cargadas en la tabla Provincias1, no lo hago porque me pide pagar,Pero podría hacerlo desde obtener mas objetos visuales-crear mas objetos visuales-seleccionar simbol-image.
+Este simbol-image permite agregarlo al dashboard como una tarjeta y desde la tabla provincia1 arrastraría la columna imagen con su URL y podría visualizar esas imágenes.
+
+
+
+
+
+
+
+
+
+
+
